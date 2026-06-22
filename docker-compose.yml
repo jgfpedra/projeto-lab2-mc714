@@ -1,0 +1,37 @@
+services:
+  node0:
+    build: .
+    container_name: node0
+    hostname: node0
+    networks:
+      - ring
+    command: ["0", "4", "node1", "9000", "9000"]
+    # args: <id> <total> <next_host> <next_port> <listen_port>
+
+  node1:
+    build: .
+    container_name: node1
+    hostname: node1
+    networks:
+      - ring
+    command: ["1", "4", "node2", "9000", "9000"]
+
+  node2:
+    build: .
+    container_name: node2
+    hostname: node2
+    networks:
+      - ring
+    command: ["2", "4", "node3", "9000", "9000"]
+
+  node3:
+    build: .
+    container_name: node3
+    hostname: node3
+    networks:
+      - ring
+    command: ["3", "4", "node0", "9000", "9000"]
+
+networks:
+  ring:
+    driver: bridge
