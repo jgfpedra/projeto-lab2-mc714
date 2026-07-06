@@ -1,37 +1,67 @@
+# Fonte da ideia de servico dedicado rodando um script de teste separado
+# (command: python tests.py) junto dos servicos principais:
+# Stack Overflow, pergunta de x89 (CC BY-SA 4.0)
+# https://stackoverflow.com/q/71942750
+# Retrieved 2026-07-05
+#
+# O que foi considerado: a possibilidade de ter um servico adicional no
+# mesmo docker-compose rodando um script de verificacao/teste
+# (ex: tests.py) separado dos nos da aplicacao (main.py).
+# O que foi alterado/nao usado: no exemplo original os dois servicos tem
+# o mesmo nome "main" (erro de composicao, seria sobrescrito pelo
+# parser YAML); aqui, caso um servico de teste seja adicionado, ele
+# recebe um nome proprio (ex: "test_runner") para nao conflitar com os
+# nos do anel.
+#
+# Fonte da estrutura de rede (networks / bridge customizada):
+# Stack Overflow, pergunta de Javier S (CC BY-SA 4.0)
+# https://stackoverflow.com/q/69120262
+# Retrieved 2026-07-04
+#
+# O que foi mantido: a ideia de declarar uma rede bridge propria
+# (app_network) em vez de usar a rede default do Docker, permitindo que
+# os containers se enxerguem pelo nome do servico.
+# O que foi alterado: o exemplo original tem um unico servico com
+# portas expostas ao host e dependencia de rabbitmq/backend; aqui foram
+# criados N servicos identicos (um por no do anel), cada um rodando a
+# mesma imagem com argumentos diferentes (id, proximo host, portas),
+# sem necessidade de expor porta ao host.
+
 services:
   node0:
     build: .
     container_name: node0
-    hostname: node0
+    command: ["0", "node1", "6000", "6000"]
     networks:
-      - ring
-    command: ["0", "4", "node1", "9000", "9000"]
-    # args: <id> <total> <next_host> <next_port> <listen_port>
+      - app_network
 
   node1:
     build: .
     container_name: node1
-    hostname: node1
+    command: ["1", "node2", "6000", "6000"]
     networks:
-      - ring
-    command: ["1", "4", "node2", "9000", "9000"]
+      - app_network
 
   node2:
     build: .
     container_name: node2
-    hostname: node2
+    command: ["2", "node3", "6000", "6000"]
     networks:
-      - ring
-    command: ["2", "4", "node3", "9000", "9000"]
+      - app_network
 
   node3:
     build: .
     container_name: node3
-    hostname: node3
+    command: ["3", "node4", "6000", "6000"]
     networks:
-      - ring
-    command: ["3", "4", "node0", "9000", "9000"]
+      - app_network
+
+  node4:
+    build: .
+    container_name: node4
+    command: ["4", "node0", "6000", "6000"]
+    networks:
+      - app_network
 
 networks:
-  ring:
-    driver: bridge
+  app_network:

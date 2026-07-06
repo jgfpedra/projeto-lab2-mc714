@@ -1,16 +1,9 @@
-FROM archlinux:latest
-
-RUN pacman -Syu --noconfirm && \
-    pacman -S --noconfirm gcc make && \
-    pacman -Scc --noconfirm
+FROM python:3.11-slim
 
 WORKDIR /app
-
+COPY node.py .
 COPY libs/ ./libs/
-COPY src/  ./src/
 
-RUN g++ -std=c++17 -O2 -Wall -pthread \
-    src/node.cpp \
-    -o node
+ENV PYTHONUNBUFFERED=1
 
-ENTRYPOINT ["./node"]
+ENTRYPOINT ["python3", "node.py"]

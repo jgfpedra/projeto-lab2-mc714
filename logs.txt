@@ -1,0 +1,365 @@
+ Image projeto_lab2_mc714-node1 Building 
+ Image projeto_lab2_mc714-node2 Building 
+ Image projeto_lab2_mc714-node3 Building 
+ Image projeto_lab2_mc714-node4 Building 
+ Image projeto_lab2_mc714-node0 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 2.40kB done
+#1 DONE 0.0s
+
+#2 [node4 internal] load build definition from Dockerfile
+#2 transferring dockerfile: 168B done
+#2 DONE 0.0s
+
+#3 [node1 internal] load metadata for docker.io/library/python:3.11-slim
+#3 DONE 0.5s
+
+#4 [node3 internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [node3 1/4] FROM docker.io/library/python:3.11-slim@sha256:b27df5841f3355e9473f9a516d38a6783b6c8dfeacaf2d14a240f443b368ddb6
+#5 DONE 0.0s
+
+#6 [node2 internal] load build context
+#6 transferring context: 3.58kB done
+#6 DONE 0.0s
+
+#7 [node2 2/4] WORKDIR /app
+#7 CACHED
+
+#8 [node4 3/4] COPY node.py .
+#8 CACHED
+
+#9 [node0 4/4] COPY libs/ ./libs/
+#9 DONE 0.0s
+
+#10 [node3] exporting to image
+#10 exporting layers
+#10 exporting layers 0.2s done
+#10 writing image sha256:8f6d9a76cc6efdbf83dbf68cf617d2220a9a3d5e0c90878c2c7ac3f73276178c 0.0s done
+#10 naming to docker.io/library/projeto_lab2_mc714-node3 0.0s done
+#10 DONE 0.3s
+
+#11 [node2] exporting to image
+#11 exporting layers 0.2s done
+#11 writing image sha256:50135bfb2c07884de885100ce159abe94ed51d07ee0b666be81b98c956ff8bce done
+#11 naming to docker.io/library/projeto_lab2_mc714-node2 done
+#11 DONE 0.2s
+
+#12 [node4] exporting to image
+#12 exporting layers 0.2s done
+#12 writing image sha256:0a50ef0c0bb8e977cb6a9af4494684e29f4a4b975861494e777e4063020693c1 done
+#12 naming to docker.io/library/projeto_lab2_mc714-node4 0.0s done
+#12 DONE 0.2s
+
+#13 [node1] exporting to image
+#13 exporting layers 0.2s done
+#13 writing image sha256:589f1d8f69c55d70f55b643cc664d60664e80032a2c236eef0090341971cead9 done
+#13 naming to docker.io/library/projeto_lab2_mc714-node1 0.0s done
+#13 DONE 0.3s
+
+#14 [node0] exporting to image
+#14 exporting layers 0.2s done
+#14 writing image sha256:c597a7daf81a46ecffed478cbdb7140cba376d50e4de93db47ae8dadc61e9402 0.0s done
+#14 naming to docker.io/library/projeto_lab2_mc714-node0 0.0s done
+#14 DONE 0.3s
+
+#15 [node2] resolving provenance for metadata file
+#15 DONE 0.1s
+
+#16 [node1] resolving provenance for metadata file
+#16 DONE 0.0s
+
+#17 [node0] resolving provenance for metadata file
+#17 DONE 0.0s
+
+#18 [node4] resolving provenance for metadata file
+#18 DONE 0.1s
+
+#19 [node3] resolving provenance for metadata file
+#19 DONE 0.0s
+ Image projeto_lab2_mc714-node0 Built 
+ Image projeto_lab2_mc714-node1 Built 
+ Image projeto_lab2_mc714-node2 Built 
+ Image projeto_lab2_mc714-node3 Built 
+ Image projeto_lab2_mc714-node4 Built 
+ Container node0 Recreate 
+ Container node1 Recreate 
+ Container node2 Recreate 
+ Container node3 Recreate 
+ Container node4 Recreate 
+ Container node4 Recreated 
+ Container node0 Recreated 
+ Container node2 Recreated 
+ Container node3 Recreated 
+ Container node1 Recreated 
+Attaching to node0, node1, node2, node3, node4
+ Container node0 Starting 
+ Container node1 Starting 
+ Container node2 Starting 
+ Container node3 Starting 
+ Container node4 Starting 
+ Container node0 Started 
+ Container node2 Started 
+ Container node4 Started 
+ Container node1 Started 
+ Container node3 Started 
+node0  | [Listen] Waiting for connection on port 6000
+node2  | [Listen] Waiting for connection on port 6000
+node4  | [Listen] Waiting for connection on port 6000
+node1  | [Listen] Waiting for connection on port 6000
+node3  | [Listen] Waiting for connection on port 6000
+node1  | [Listen] previous node connected
+node0  | [node 0] connected to node1:6000
+node0  | [node 0 | T=1] started election with candidate 0
+node2  | [node 2] connected to node3:6000
+node3  | [Listen] previous node connected
+node4  | [node 4] connected to node0:6000
+node0  | [Listen] previous node connected
+node2  | [Listen] previous node connected
+node1  | [node 1] connected to node2:6000
+node1  | [node 1 | T=2] forwarding candidate 1
+node3  | [node 3] connected to node4:6000
+node4  | [Listen] previous node connected
+node2  | [node 2 | T=1] sent Lamport event (wall-clock: 02:08:33)
+node4  | [node 4 | T=1] sent Lamport event (wall-clock: 02:08:33)
+node0  | [node 0 | T=2] received Lamport event from node 4 02:08:36
+node2  | [node 2 | T=4] forwarding candidate 2
+node1  | [node 1 | T=4] sent Lamport event (wall-clock: 02:08:37)
+node3  | [node 3 | T=1] sent Lamport event (wall-clock: 02:08:37)
+node4  | [node 4 | T=2] received Lamport event from node 3 02:08:41
+node3  | [node 3 | T=2] received Lamport event from node 2 02:08:41
+node3  | [node 3 | T=6] forwarding candidate 3
+node2  | [node 2 | T=6] sent Lamport event (wall-clock: 02:08:42)
+node2  | [node 2 | T=7] received Lamport event from node 1 02:08:46
+node4  | [node 4 | T=3] sent Lamport event (wall-clock: 02:08:46)
+node3  | [node 3 | T=8] sent Lamport event (wall-clock: 02:08:46)
+node0  | [node 0 | T=4] received Lamport event from node 4 02:08:48
+node4  | [node 4 | T=8] forwarding candidate 4
+node4  | [node 4 | T=10] received Lamport event from node 3 02:08:50
+node3  | [node 3 | T=9] received Lamport event from node 2 02:08:50
+node2  | [node 2 | T=8] sent Lamport event (wall-clock: 02:08:51)
+node0  | [node 0 | T=5] sent Lamport event (wall-clock: 02:08:53)
+node1  | [node 1 | T=5] sent Lamport event (wall-clock: 02:08:54)
+node2  | [node 2 | T=9] received Lamport event from node 1 02:08:55
+node4  | [node 4 | T=11] sent Lamport event (wall-clock: 02:08:55)
+node3  | [node 3 | T=10] sent Lamport event (wall-clock: 02:08:55)
+node0  | [node 0 | T=10] forwarding candidate 4
+node0  | [node 0 | T=12] received Lamport event from node 4 02:08:57
+node1  | [node 1 | T=6] received Lamport event from node 0 02:08:58
+node1  | [node 1 | T=12] forwarding candidate 4
+node4  | [node 4 | T=12] received Lamport event from node 3 02:08:59
+node3  | [node 3 | T=11] received Lamport event from node 2 02:08:59
+node2  | [node 2 | T=10] sent Lamport event (wall-clock: 02:09:00)
+node1  | [node 1 | T=14] sent Lamport event (wall-clock: 02:09:03)
+node3  | [node 3 | T=12] received Lamport event from node 2 02:09:03
+node2  | [node 2 | T=14] forwarding candidate 4
+node2  | [node 2 | T=16] received Lamport event from node 1 02:09:04
+node3  | [node 3 | T=13] sent Lamport event (wall-clock: 02:09:08)
+node2  | [node 2 | T=17] sent Lamport event (wall-clock: 02:09:09)
+node4  | [node 4 | T=14] received Lamport event from node 3 02:09:11
+node3  | [node 3 | T=16] forwarding candidate 4
+node3  | [node 3 | T=18] received Lamport event from node 2 02:09:12
+node0  | [node 0 | T=13] sent Lamport event (wall-clock: 02:09:14)
+node4  | [node 4 | T=18] I AM THE LEADER (id=4), sending ELECTED
+node1  | [node 1 | T=15] sent Lamport event (wall-clock: 02:09:16)
+node2  | [node 2 | T=18] sent Lamport event (wall-clock: 02:09:18)
+node1  | [node 1 | T=16] received Lamport event from node 0 02:09:20
+node3  | [node 3 | T=19] sent Lamport event (wall-clock: 02:09:21)
+node2  | [node 2 | T=19] received Lamport event from node 1 02:09:22
+node0  | [node 0 | T=14] sent Lamport event (wall-clock: 02:09:23)
+node1  | [node 1 | T=17] sent Lamport event (wall-clock: 02:09:25)
+node3  | [node 3 | T=20] received Lamport event from node 2 02:09:25
+node2  | [node 2 | T=20] received Lamport event from node 1 02:09:26
+[Knode4 exited with code 137
+node1  | [node 1 | T=18] received Lamport event from node 0 02:09:29
+node3  | [node 3 | T=21] sent Lamport event (wall-clock: 02:09:30)
+node0  | [node 0 | T=15] sent Lamport event (wall-clock: 02:09:36)
+node1  | [node 1 | T=19] received Lamport event from node 0 02:09:37
+node3  | [node 3 | T=22] sent Lamport event (wall-clock: 02:09:39)
+node1  | [node 1 | T=20] sent Lamport event (wall-clock: 02:09:42)
+node2  | [node 2 | T=21] sent Lamport event (wall-clock: 02:09:47)
+node3  | [node 3 | T=23] sent Lamport event (wall-clock: 02:09:48)
+node0  | [node 0 | T=16] sent Lamport event (wall-clock: 02:09:49)
+node1  | [node 1 | T=21] received Lamport event from node 0 02:09:50
+node2  | [node 2 | T=22] received Lamport event from node 1 02:09:51
+node3  | [node 3 | T=24] received Lamport event from node 2 02:09:52
+node3  | [node 3 | T=25] sent Lamport event (wall-clock: 02:09:57)
+node2  | [node 2 | T=23] sent Lamport event (wall-clock: 02:10:00)
+node3  | [node 3 | T=26] received Lamport event from node 2 02:10:01
+node1  | [node 1 | T=22] sent Lamport event (wall-clock: 02:10:03)
+node2  | [node 2 | T=24] received Lamport event from node 1 02:10:04
+node0  | [node 0 | T=17] sent Lamport event (wall-clock: 02:10:06)
+node3  | [node 3 | T=27] sent Lamport event (wall-clock: 02:10:06)
+node1  | [node 1 | T=23] received Lamport event from node 0 02:10:07
+node1  | [node 1 | T=24] sent Lamport event (wall-clock: 02:10:12)
+node2  | [node 2 | T=25] sent Lamport event (wall-clock: 02:10:13)
+node3  | [node 3 | T=28] sent Lamport event (wall-clock: 02:10:15)
+node2  | [node 2 | T=26] received Lamport event from node 1 02:10:17
+node3  | [node 3 | T=29] received Lamport event from node 2 02:10:19
+node1  | [node 1 | T=25] sent Lamport event (wall-clock: 02:10:21)
+node2  | [node 2 | T=27] received Lamport event from node 1 02:10:25
+node3  | [node 3 | T=30] sent Lamport event (wall-clock: 02:10:28)
+node2  | [node 2 | T=28] sent Lamport event (wall-clock: 02:10:30)
+node1  | [node 1 | T=26] sent Lamport event (wall-clock: 02:10:30)
+node3  | [node 3 | T=31] received Lamport event from node 2 02:10:32
+node2  | [node 2 | T=29] received Lamport event from node 1 02:10:34
+node0  | [node 0 | T=18] sent Lamport event (wall-clock: 02:10:35)
+node1  | [node 1 | T=27] received Lamport event from node 0 02:10:38
+node2  | [node 2 | T=30] sent Lamport event (wall-clock: 02:10:43)
+node3  | [node 3 | T=32] sent Lamport event (wall-clock: 02:10:45)
+node1  | [node 1 | T=28] sent Lamport event (wall-clock: 02:10:47)
+node0  | [node 0 | T=19] sent Lamport event (wall-clock: 02:10:48)
+node3  | [node 3 | T=33] received Lamport event from node 2 02:10:49
+node2  | [node 2 | T=31] received Lamport event from node 1 02:10:51
+node1  | [node 1 | T=29] received Lamport event from node 0 02:10:51
+node2  | [node 2 | T=32] sent Lamport event (wall-clock: 02:10:56)
+node1  | [node 1 | T=30] sent Lamport event (wall-clock: 02:10:56)
+node0  | [node 0 | T=20] sent Lamport event (wall-clock: 02:10:57)
+node3  | [node 3 | T=34] sent Lamport event (wall-clock: 02:10:58)
+node2  | [node 2 | T=33] received Lamport event from node 1 02:11:00
+node1  | [node 1 | T=31] received Lamport event from node 0 02:11:00
+node3  | [node 3 | T=35] received Lamport event from node 2 02:11:02
+node0  | [node 0 | T=21] sent Lamport event (wall-clock: 02:11:06)
+node2  | [node 2 | T=34] sent Lamport event (wall-clock: 02:11:09)
+node1  | [node 1 | T=32] sent Lamport event (wall-clock: 02:11:09)
+node3  | [node 3 | T=36] sent Lamport event (wall-clock: 02:11:11)
+node2  | [node 2 | T=35] received Lamport event from node 1 02:11:13
+node1  | [node 1 | T=33] received Lamport event from node 0 02:11:13
+node0  | [node 0 | T=22] sent Lamport event (wall-clock: 02:11:15)
+node3  | [node 3 | T=37] received Lamport event from node 2 02:11:15
+node2  | [node 2 | T=36] sent Lamport event (wall-clock: 02:11:18)
+node1  | [node 1 | T=34] sent Lamport event (wall-clock: 02:11:18)
+node3  | [node 3 | T=38] sent Lamport event (wall-clock: 02:11:20)
+node2  | [node 2 | T=37] received Lamport event from node 1 02:11:22
+node1  | [node 1 | T=35] received Lamport event from node 0 02:11:22
+node0  | [node 0 | T=23] sent Lamport event (wall-clock: 02:11:24)
+node3  | [node 3 | T=39] received Lamport event from node 2 02:11:24
+node2  | [node 2 | T=38] sent Lamport event (wall-clock: 02:11:27)
+node1  | [node 1 | T=36] sent Lamport event (wall-clock: 02:11:27)
+node3  | [node 3 | T=40] sent Lamport event (wall-clock: 02:11:29)
+node2  | [node 2 | T=39] received Lamport event from node 1 02:11:31
+node1  | [node 1 | T=37] received Lamport event from node 0 02:11:31
+node3  | [node 3 | T=41] received Lamport event from node 2 02:11:33
+node2  | [node 2 | T=40] sent Lamport event (wall-clock: 02:11:36)
+node0  | [node 0 | T=24] sent Lamport event (wall-clock: 02:11:37)
+node3  | [node 3 | T=42] sent Lamport event (wall-clock: 02:11:38)
+node1  | [node 1 | T=38] sent Lamport event (wall-clock: 02:11:40)
+node3  | [node 3 | T=43] received Lamport event from node 2 02:11:42
+node1  | [node 1 | T=39] received Lamport event from node 0 02:11:44
+node2  | [node 2 | T=41] sent Lamport event (wall-clock: 02:11:45)
+node0  | [node 0 | T=25] sent Lamport event (wall-clock: 02:11:46)
+node3  | [node 3 | T=44] sent Lamport event (wall-clock: 02:11:47)
+node1  | [node 1 | T=40] received Lamport event from node 0 02:11:48
+node2  | [node 2 | T=42] received Lamport event from node 1 02:11:49
+node3  | [node 3 | T=45] received Lamport event from node 2 02:11:51
+node2  | [node 2 | T=43] sent Lamport event (wall-clock: 02:11:54)
+node0  | [node 0 | T=26] sent Lamport event (wall-clock: 02:11:55)
+node1  | [node 1 | T=41] received Lamport event from node 0 02:11:56
+node3  | [node 3 | T=46] sent Lamport event (wall-clock: 02:11:56)
+node3  | [node 3 | T=47] received Lamport event from node 2 02:12:00
+node1  | [node 1 | T=42] sent Lamport event (wall-clock: 02:12:01)
+node2  | [node 2 | T=44] received Lamport event from node 1 02:12:02
+node2  | [node 2 | T=45] sent Lamport event (wall-clock: 02:12:11)
+node3  | [node 3 | T=48] sent Lamport event (wall-clock: 02:12:13)
+node1  | [node 1 | T=43] sent Lamport event (wall-clock: 02:12:14)
+node2  | [node 2 | T=46] received Lamport event from node 1 02:12:15
+node3  | [node 3 | T=49] received Lamport event from node 2 02:12:17
+node2  | [node 2 | T=47] sent Lamport event (wall-clock: 02:12:24)
+node3  | [node 3 | T=50] received Lamport event from node 2 02:12:25
+node1  | [node 1 | T=44] sent Lamport event (wall-clock: 02:12:27)
+node0  | [node 0 | T=27] sent Lamport event (wall-clock: 02:12:28)
+node2  | [node 2 | T=48] received Lamport event from node 1 02:12:28
+node1  | [node 1 | T=45] received Lamport event from node 0 02:12:31
+node3  | [node 3 | T=51] sent Lamport event (wall-clock: 02:12:34)
+node0  | [node 0 | T=28] sent Lamport event (wall-clock: 02:12:37)
+node1  | [node 1 | T=46] received Lamport event from node 0 02:12:39
+node1  | [node 1 | T=47] sent Lamport event (wall-clock: 02:12:44)
+node2  | [node 2 | T=49] sent Lamport event (wall-clock: 02:12:45)
+node0  | [node 0 | T=29] sent Lamport event (wall-clock: 02:12:46)
+node3  | [node 3 | T=52] received Lamport event from node 2 02:12:46
+node1  | [node 1 | T=48] received Lamport event from node 0 02:12:48
+node2  | [node 2 | T=50] received Lamport event from node 1 02:12:49
+node0  | [node 0 | T=30] sent Lamport event (wall-clock: 02:12:55)
+node1  | [node 1 | T=49] sent Lamport event (wall-clock: 02:12:57)
+node3  | [node 3 | T=53] sent Lamport event (wall-clock: 02:12:59)
+node2  | [node 2 | T=51] received Lamport event from node 1 02:13:01
+node1  | [node 1 | T=50] received Lamport event from node 0 02:13:01
+node0  | [node 0 | T=31] sent Lamport event (wall-clock: 02:13:04)
+node1  | [node 1 | T=51] sent Lamport event (wall-clock: 02:13:06)
+node2  | [node 2 | T=52] sent Lamport event (wall-clock: 02:13:10)
+node1  | [node 1 | T=52] received Lamport event from node 0 02:13:10
+node3  | [node 3 | T=54] sent Lamport event (wall-clock: 02:13:12)
+node2  | [node 2 | T=53] received Lamport event from node 1 02:13:14
+node1  | [node 1 | T=53] sent Lamport event (wall-clock: 02:13:15)
+node3  | [node 3 | T=55] received Lamport event from node 2 02:13:16
+node2  | [node 2 | T=54] sent Lamport event (wall-clock: 02:13:19)
+node0  | [node 0 | T=32] sent Lamport event (wall-clock: 02:13:21)
+node3  | [node 3 | T=56] sent Lamport event (wall-clock: 02:13:21)
+node2  | [node 2 | T=55] received Lamport event from node 1 02:13:23
+node1  | [node 1 | T=54] received Lamport event from node 0 02:13:23
+node3  | [node 3 | T=57] received Lamport event from node 2 02:13:25
+node0  | [node 0 | T=33] sent Lamport event (wall-clock: 02:13:30)
+node2  | [node 2 | T=56] sent Lamport event (wall-clock: 02:13:32)
+node1  | [node 1 | T=55] sent Lamport event (wall-clock: 02:13:32)
+node3  | [node 3 | T=58] received Lamport event from node 2 02:13:33
+node2  | [node 2 | T=57] received Lamport event from node 1 02:13:36
+node1  | [node 1 | T=56] received Lamport event from node 0 02:13:36
+node2  | [node 2 | T=58] sent Lamport event (wall-clock: 02:13:41)
+node1  | [node 1 | T=57] sent Lamport event (wall-clock: 02:13:41)
+node3  | [node 3 | T=59] sent Lamport event (wall-clock: 02:13:42)
+node2  | [node 2 | T=59] received Lamport event from node 1 02:13:45
+node3  | [node 3 | T=60] received Lamport event from node 2 02:13:46
+node2  | [node 2 | T=60] sent Lamport event (wall-clock: 02:13:50)
+node3  | [node 3 | T=61] received Lamport event from node 2 02:13:50
+node3  | [node 3 | T=62] sent Lamport event (wall-clock: 02:13:55)
+node1  | [node 1 | T=58] sent Lamport event (wall-clock: 02:13:58)
+node2  | [node 2 | T=61] sent Lamport event (wall-clock: 02:13:59)
+node3  | [node 3 | T=63] received Lamport event from node 2 02:13:59
+node2  | [node 2 | T=62] received Lamport event from node 1 02:14:03
+node0  | [node 0 | T=34] sent Lamport event (wall-clock: 02:14:07)
+node1  | [node 1 | T=59] sent Lamport event (wall-clock: 02:14:07)
+node2  | [node 2 | T=63] sent Lamport event (wall-clock: 02:14:08)
+node3  | [node 3 | T=64] sent Lamport event (wall-clock: 02:14:08)
+node1  | [node 1 | T=60] received Lamport event from node 0 02:14:11
+node2  | [node 2 | T=64] received Lamport event from node 1 02:14:12
+node3  | [node 3 | T=65] received Lamport event from node 2 02:14:12
+node1  | [node 1 | T=61] sent Lamport event (wall-clock: 02:14:16)
+node3  | [node 3 | T=66] sent Lamport event (wall-clock: 02:14:17)
+node2  | [node 2 | T=65] sent Lamport event (wall-clock: 02:14:21)
+node3  | [node 3 | T=67] received Lamport event from node 2 02:14:21
+node0  | [node 0 | T=35] sent Lamport event (wall-clock: 02:14:24)
+node2  | [node 2 | T=66] received Lamport event from node 1 02:14:25
+node1  | [node 1 | T=62] sent Lamport event (wall-clock: 02:14:25)
+node3  | [node 3 | T=68] sent Lamport event (wall-clock: 02:14:26)
+node1  | [node 1 | T=63] received Lamport event from node 0 02:14:29
+node2  | [node 2 | T=67] sent Lamport event (wall-clock: 02:14:30)
+node3  | [node 3 | T=69] received Lamport event from node 2 02:14:30
+node2  | [node 2 | T=68] received Lamport event from node 1 02:14:34
+node3  | [node 3 | T=70] sent Lamport event (wall-clock: 02:14:35)
+node0  | [node 0 | T=36] sent Lamport event (wall-clock: 02:14:37)
+node1  | [node 1 | T=64] sent Lamport event (wall-clock: 02:14:38)
+node1  | [node 1 | T=65] received Lamport event from node 0 02:14:42
+node2  | [node 2 | T=69] sent Lamport event (wall-clock: 02:14:43)
+node3  | [node 3 | T=71] received Lamport event from node 2 02:14:43
+node0  | [node 0 | T=37] sent Lamport event (wall-clock: 02:14:46)
+node1  | [node 1 | T=66] received Lamport event from node 0 02:14:46
+node2  | [node 2 | T=70] received Lamport event from node 1 02:14:47
+node3  | [node 3 | T=72] sent Lamport event (wall-clock: 02:14:48)
+node2  | [node 2 | T=71] sent Lamport event (wall-clock: 02:14:56)
+node3  | [node 3 | T=73] received Lamport event from node 2 02:14:56
+node0  | [node 0 | T=38] sent Lamport event (wall-clock: 02:14:59)
+node1  | [node 1 | T=67] sent Lamport event (wall-clock: 02:15:03)
+node2  | [node 2 | T=72] received Lamport event from node 1 02:15:04
+node1  | [node 1 | T=68] received Lamport event from node 0 02:15:07
+node0  | [node 0 | T=39] sent Lamport event (wall-clock: 02:15:08)
+node2  | [node 2 | T=73] sent Lamport event (wall-clock: 02:15:09)
+ Compose Stopping Gracefully Stopping... press Ctrl+C again to force
+ Container node0 Stopping 
+ Container node2 Stopping 
+ Container node3 Stopping 
+ Container node1 Stopping 
+ Container node4 Stopping 
+ Container node4 Stopped 
+got 3 SIGTERM/SIGINTs, forcefully exiting
